@@ -147,6 +147,13 @@ a:hover {
     width: 250px;
 }
 
+.checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto 30px auto;
+}
+
 .card-container {
     min-height: 65vh !important;
 }
