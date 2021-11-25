@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import { Row, Input, Collapse } from 'antd';
+import { Row, Input } from 'antd';
 
-import CompanyCard from './CompanyCard';
-import CheckBox from './CheckBox';
+import {CompanyCard, CheckBox} from './';
 
 const CompanyList = ({ companiesList }) => {
 

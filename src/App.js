@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CompanyList from './components/CompanyList';
-import Loader from './components/Loader';
+import {CompanyList, Loader } from './components';
 
 import { useGetCompaniesQuery } from './services/cosunoApi';
 
