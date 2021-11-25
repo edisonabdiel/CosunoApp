@@ -9,7 +9,7 @@ export const cosunoApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
   endpoints: (builder) => ({
     getCompanies: builder.query({
-      query: (count) => createRequest('/companies'),
+      query: () => createRequest('/companies'),
     })
   }),
 });

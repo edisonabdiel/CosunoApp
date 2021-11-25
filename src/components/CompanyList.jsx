@@ -2,17 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import { Card, Row, Col, Input, Checkbox, Collapse } from 'antd';
 
-import { useGetCompaniesQuery } from '../services/cosunoApi';
-
 import { specialityList } from '../constants';
-
-import Loader from './Loader';
 
 const { Panel } = Collapse;
 
-const CompanyList = () => {
+const CompanyList = ({ companiesList }) => {
 
-    const { data: companiesList, isFetching } = useGetCompaniesQuery();
     const [companies, setCompanies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [checkedSpeciality, setCheckedSpeciality] = useState([]);
@@ -34,11 +29,11 @@ const CompanyList = () => {
     
     useEffect(() => {
         
-        const filteredCompaniesBySpeciality = companies?.map((company) => {
+        const filteredCompaniesBySpeciality = companiesList?.map((company) => {
             if (checkedSpeciality.length === 0) {
                 return company;
             }
-            return company?.specialities.toLowerCase().some((speciality) => checkedSpeciality?.toLowerCase().includes(speciality));
+            return company?.specialities?.filter((speciality) => checkedSpeciality?.toLowerCase().includes(speciality));
         });
         
 
@@ -62,8 +57,6 @@ const CompanyList = () => {
         setCheckedSpeciality(newChecked);
     }
 
-
-    if (isFetching) return <Loader />;
 
     return (
         <>

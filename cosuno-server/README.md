@@ -14,4 +14,4 @@ Start server on [http://localhost:3000](http://localhost:3000) by runninng the f
 
 | method | path               | description            |
 |--------|--------------------|------------------------|
-| GET    | /api/companies     | Get list of users      |
+| GET    | /api/companies     | Get list of companies  |
