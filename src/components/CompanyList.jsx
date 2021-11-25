@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-import { Row, Input, Checkbox, Collapse } from 'antd';
+import { Row, Input, Collapse } from 'antd';
 
-import { specialityList } from '../constants';
 import CompanyCard from './CompanyCard';
-
-const { Panel } = Collapse;
+import CheckBox from './CheckBox';
 
 const CompanyList = ({ companiesList }) => {
 
@@ -64,20 +62,9 @@ const CompanyList = ({ companiesList }) => {
             <div className="search">
                 <Input placeholder="Search Construction Company" onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
-            <Collapse defaultActiveKey={['0']} style={{marginBottom: '25px'}}>
-                <Panel header="Filter By Speciality" key="1">
-                    <div className="checkbox">
-                        {specialityList.map((speciality, index) => (
-                            <Checkbox 
-                                key={index}
-                                value={speciality}
-                                onChange={() => handleCheckbox(speciality)}>
-                                {speciality}
-                            </Checkbox>
-                        ))}
-                    </div>
-                </Panel>
-            </Collapse>
+            <div>
+                <CheckBox handleCheckbox={handleCheckbox} />
+            </div>
             <Row gutter={[32, 32]} className="card-container">
                 {companies?.map((company) => (
                     <CompanyCard key={company.id} company={company} />
