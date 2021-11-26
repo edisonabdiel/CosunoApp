@@ -39,6 +39,7 @@ A SPA displaying fictional Construction Companies details, integrated with a sea
 ### Dependencies
 
 - Ant Design Icons
+- React Icons
 
 
 ## Design Reasoning

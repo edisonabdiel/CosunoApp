@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {CompanyList, Loader } from './components';
+import {CompanyList, Loader, Navbar } from './components';
 
 import { useGetCompaniesQuery } from './services/cosunoApi';
 
@@ -14,7 +14,8 @@ const App = () => {
   if (error) return <p>Error :(</p>;
 
     return (
-        <div className="main">
+      <div className="main">
+        <Navbar />
         <CompanyList companiesList={companiesList}/>
         </div>
     )
