@@ -1,59 +1,45 @@
+// React Hooks
 import { useState, useEffect } from 'react';
-
+// Ant Design Components
 import { Row, Input } from 'antd';
-
-import {CompanyCard, CheckBox} from './';
+//Custom Components
+import { CompanyCard, CheckBox } from './';
 
 const CompanyList = ({ companiesList }) => {
 
     const [companies, setCompanies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [checkedSpeciality, setCheckedSpeciality] = useState([]);
 
-    console.log(checkedSpeciality)
-
-     
     useEffect(() => {
 
         const filteredCompanies = companiesList?.filter((company) => (
             company.company_name.toLowerCase().includes(searchTerm.toLowerCase()))
         );
-        
-        
-        
+
         setCompanies(filteredCompanies);
-        
+
     }, [companiesList, searchTerm]);
-    
-    useEffect(() => {
-        
-        const filteredCompaniesBySpeciality = companiesList?.map((company) => {
-            if (checkedSpeciality.length === 0) {
-                return company;
-            }
-            return company?.specialities?.filter((speciality) => checkedSpeciality?.toLowerCase().includes(speciality));
-        });
-        
-
-        setCompanies(filteredCompaniesBySpeciality);
-        
-
-    }, [checkedSpeciality]);
 
 
-    const handleCheckbox = (speciality) => {
+    const showFilteredCompanies = (filters) => {
+        return companies?.map((company) => (
+            <CompanyCard
+                key={company.id}
+                company={company}
+            />
+        ));
+    };
 
-        const index = checkedSpeciality.indexOf(speciality);
-        const newChecked = [...checkedSpeciality];
+    const handleFilters = (filters) => {
 
-        if (index === -1) {
-            newChecked.push(speciality);
+        if (filters.length === 0) {
+            setCompanies(companiesList);
         } else {
-            newChecked.splice(index, 1);
+            setCompanies(companiesList?.filter((company) => (
+                company?.specialities?.includes(filters[0]))
+            ));
         }
-
-        setCheckedSpeciality(newChecked);
-    }
+    };
 
 
     return (
@@ -62,12 +48,10 @@ const CompanyList = ({ companiesList }) => {
                 <Input placeholder="Search Construction Company" onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div>
-                <CheckBox handleCheckbox={handleCheckbox} />
+                <CheckBox handleFilters={filters => handleFilters(filters)} />
             </div>
             <Row gutter={[32, 32]} className="card-container">
-                {companies?.map((company) => (
-                    <CompanyCard key={company.id} company={company} />
-                ))}
+                {showFilteredCompanies()}
             </Row>
         </>
     )
