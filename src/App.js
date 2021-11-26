@@ -10,7 +10,7 @@ const App = () => {
 
   const { data: companiesList, isFetching, error } = useGetCompaniesQuery();
 
-  if (isFetching) return <Loader />;
+  if (isFetching) return <Loader className="loader"/>;
   if (error) return <p>Error :(</p>;
 
     return (
