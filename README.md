@@ -10,6 +10,8 @@
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#design-reasoning">Design Reasoning</a></li>
+    <li><a href="#challenges">Challanges</a></li>
+    <li><a href="#further-improvements">Further Improvements</a></li>
     <li><a href="#API">API</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
   </ol>
