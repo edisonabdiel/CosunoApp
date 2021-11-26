@@ -3,7 +3,6 @@ import { Menu } from 'antd';
 // Icons
 import { BsTools } from 'react-icons/bs';
 
-
 const { Item } = Menu;
 
 const Navbar = () => (

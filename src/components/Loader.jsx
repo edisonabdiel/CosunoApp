@@ -1,4 +1,4 @@
-import React from 'react';
+// Ant Design Component
 import { Spin } from 'antd';
 
 const Loader = () => (

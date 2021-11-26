@@ -1,9 +1,8 @@
-import React from 'react';
-
+// Custom Components
 import {CompanyList, Loader, Navbar } from './components';
-
+// API
 import { useGetCompaniesQuery } from './services/cosunoApi';
-
+// Global Styles
 import './App.css';
 
 const App = () => {

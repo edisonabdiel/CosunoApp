@@ -1,7 +1,8 @@
+// React Hooks
 import { useState } from 'react';
-
+// Specialities array
 import { specialityList } from '../constants';
-
+//Ant Design Components
 import { Checkbox, Collapse } from 'antd';
 
 const { Panel } = Collapse;
@@ -9,8 +10,6 @@ const { Panel } = Collapse;
 const CheckBox = ({ handleFilters }) => {
     
     const [checkedSpeciality, setCheckedSpeciality] = useState([]);
-
-    console.log(checkedSpeciality);
 
     const handleToggle = (speciality) => {
 

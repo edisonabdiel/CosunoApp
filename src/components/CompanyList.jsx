@@ -20,8 +20,7 @@ const CompanyList = ({ companiesList }) => {
 
     }, [companiesList, searchTerm]);
 
-
-    const showFilteredCompanies = (filters) => {
+    const showFilteredCompanies = () => {
         return companies?.map((company) => (
             <CompanyCard
                 key={company.id}
@@ -40,7 +39,6 @@ const CompanyList = ({ companiesList }) => {
             ));
         }
     };
-
 
     return (
         <>
