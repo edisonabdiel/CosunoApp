@@ -70,7 +70,7 @@ Refer to the ```cosuno-server``` folder for more information on how to get the s
 
 ```cd``` into the ```server``` folder and run the following command:
 
-```json-server companies.json``` 
+```json-server cosuno.json``` 
 
 | method | path               | description            |
 |--------|--------------------|------------------------|
