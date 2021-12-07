@@ -9,7 +9,7 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
-    <li><a href="#design-reasoning">Design Reasoning</a></li>
+    <li><a href="#architecture">Architecture</a></li>
     <li><a href="#challenges">Challanges</a></li>
     <li><a href="#further-improvements">Further Improvements</a></li>
     <li><a href="#API">API</a></li>
@@ -44,7 +44,7 @@ A SPA displaying fictional Construction Companies details, integrated with a sea
 - React Icons
 
 
-## Design Reasoning
+## Architecture
 
 The app was initialised with create-react-app.
 
@@ -66,7 +66,7 @@ Bulding this app was a fun and challenging experience. Filtering based on the ch
 
 ## API
 
-Refer to the ```server``` folder for more information on how to get the server running and how to use it.
+Refer to the ```cosuno-server``` folder for more information on how to get the server running and how to use it.
 
 ```cd``` into the ```server``` folder and run the following command:
 
@@ -93,9 +93,9 @@ yarn add install
 Run the development server:
 
 ```bash
-npm run dev
+npm start
 # or
-yarn dev
+yarn start
 ```
 
 Build 
